@@ -25,7 +25,7 @@ SECRET_KEY = 'ig-=-6e!0tmrrenh9&s8f-i8)i%ul142))kafu#(4wtgx(wo+!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,8 +49,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = (
+#        'http://localhost:4200',
+# )
 ROOT_URLCONF = 'roboserver.urls'
 
 TEMPLATES = [
