@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:roboui/views/robo_ui.dart';
 
-void setuplocator() {
-  GetIt.I.registerLazySingleton(() => RoboFramServices());
+void setupLocator() {
+  // To initialize instances
+  GetIt.I.registerLazySingleton(() => RoboFrameServices());
 }
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
